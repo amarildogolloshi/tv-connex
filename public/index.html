@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connex</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Connex</h1></header>
+
+  <canvas id="game" width="900" height="900" aria-label="Connex Game"></canvas>
+
+  <div id="hud" role="group" aria-label="Controls">
+    <!-- Line 1: New + Restart -->
+    <div class="hud-row">
+      <button class="btn" id="new"     type="button">New</button>
+      <button class="btn" id="restart" type="button">Restart</button>
+    </div>
+
+    <!-- Line 2: Mode (Daily / Random) + Level dropdown -->
+    <div class="hud-row">
+      <label for="levelSelect">Level:</label>
+      <select id="levelSelect" class="btn" style="min-width: 220px;"></select>
+    </div>
+
+    <!-- Line 3: Timer + Target (one line) -->
+    <div class="hud-row">
+      <span id="timeTarget" class="hud-line" aria-live="polite"></span>
+    </div>
+
+    <!-- Line 4: Status -->
+    <div class="hud-row">
+      <span id="status">Use Arrow keys / D‑pad / Gamepad</span>
+    </div>
+  </div>
+
+  <footer>
+    Daily = same puzzle for everyone. New = new layout. Restart = reload this layout.
+  </footer>
+
+  <script src="connex.js"></script>
+</body>
+</html>
