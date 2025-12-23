@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connex</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Connex</h1></header>
+
+  <canvas id="game" width="900" height="900" aria-label="Connex Game"></canvas>
+
+  <div id="hud" role="group" aria-label="Controls">
+    <!-- Line 1: New + Restart -->
+    <div class="hud-row">
+      <button class="btn" id="new"     type="button">New</button>
+      <button class="btn" id="restart" type="button">Restart</button>
+    </div>
+
+    <!-- Line 2: Mode (Daily / Random) + Level dropdown -->
+    <div class="hud-row">
+      <label for="levelSelect">Level:</label>
+      <select id="levelSelect" class="btn" style="min-width: 220px;"></select>
+    </div>
+
+    <!-- Line 3: Template selector -->
+    <div class="hud-row">
+      <label for="templateSelect">Template:</label>
+      <select id="templateSelect" class="btn" style="min-width: 220px;">
+        <option value="auto">Auto (weighted)</option>
+        <option value="dfs">DFS</option>
+        <option value="serpentine">Serpentine</option>
+        <option value="spiral">Spiral</option>
+        <option value="column">Column</option>
+        <option value="diagonal">Diagonal</option>
+        <option value="center">Center spiral</option>
+        <option value="rings">Rings</option>
+        <option value="spokes">Radial spokes</option>
+        <option value="truespokes">True radial spokes</option>
+        <option value="corner">Corner spiral</option>
+        <option value="perimeter">Perimeter-first</option>
+        <option value="checker2">Checkerboard (2×2 blocks)</option>
+        <option value="diagstripes">Diagonal stripes</option>
+        <option value="hilbert">Recursive (Hilbert-like)</option>
+        <option value="block">Block (2-row blocks)</option>
+        <option value="tile">Tile (2×2 tiles)</option>
+        <option value="checkerboard">Checkerboard</option>
+      </select>
+    </div>
+
+
+    <div class="hud-row">
+      <span id="timeTarget" class="hud-line" aria-live="polite"></span>
+    </div>
+
+    <!-- Line 4: Status -->
+    <div class="hud-row">
+      <span id="status">Use Arrow keys / D‑pad / Gamepad</span>
+    </div>
+  </div>
+
+  <footer>
+    Daily = same puzzle for everyone. New = new layout. Restart = reload this layout.
+  </footer>
+
+  <script src="connex.js"></script>
+</body>
+</html>
