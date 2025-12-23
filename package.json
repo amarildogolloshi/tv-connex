@@ -4,10 +4,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://amarildogolloshi.github.io/tv-connex",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
