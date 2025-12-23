@@ -1,0 +1,4 @@
+function buildSnakePathBase(cols,rows){const path=[];for(let y=0;y<rows;y++){if(y%2===0){for(let x=0;x<cols;x++)path.push({x,y});}else{for(let x=cols-1;x>=0;x--)path.push({x,y});}}return path;} 
+function buildCheckerboardPath(cols, rows) { const path = []; for (let x = 0; x < cols; x += 2) { const left = x; const right = Math.min(x + 1, cols - 1); const stripe = Math.floor(x / 2); if (stripe % 2 === 0) { for (let y = 0; y < rows; y++) { path.push({ x: left, y }); if (right !== left) path.push({ x: right, y }); } } else { for (let y = rows - 1; y >= 0; y--) { path.push({ x: left, y }); if (right !== left) path.push({ x: right, y }); } } } const total = cols * rows; if (path.length !== total) { const base = buildSnakePathBase(cols, rows); for (const p of base) if (!path.some(q => q.x === p.x && q.y === p.y)) path.push(p); } return path; }
+console.log(buildCheckerboardPath(6,6));
+console.log(buildCheckerboardPath(5,5));

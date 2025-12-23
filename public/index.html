@@ -24,7 +24,32 @@
       <select id="levelSelect" class="btn" style="min-width: 220px;"></select>
     </div>
 
-    <!-- Line 3: Timer + Target (one line) -->
+    <!-- Line 3: Template selector -->
+    <div class="hud-row">
+      <label for="templateSelect">Template:</label>
+      <select id="templateSelect" class="btn" style="min-width: 220px;">
+        <option value="auto">Auto (weighted)</option>
+        <option value="dfs">DFS</option>
+        <option value="serpentine">Serpentine</option>
+        <option value="spiral">Spiral</option>
+        <option value="column">Column</option>
+        <option value="diagonal">Diagonal</option>
+        <option value="center">Center spiral</option>
+        <option value="rings">Rings</option>
+        <option value="spokes">Radial spokes</option>
+        <option value="truespokes">True radial spokes</option>
+        <option value="corner">Corner spiral</option>
+        <option value="perimeter">Perimeter-first</option>
+        <option value="checker2">Checkerboard (2×2 blocks)</option>
+        <option value="diagstripes">Diagonal stripes</option>
+        <option value="hilbert">Recursive (Hilbert-like)</option>
+        <option value="block">Block (2-row blocks)</option>
+        <option value="tile">Tile (2×2 tiles)</option>
+        <option value="checkerboard">Checkerboard</option>
+      </select>
+    </div>
+
+
     <div class="hud-row">
       <span id="timeTarget" class="hud-line" aria-live="polite"></span>
     </div>
